@@ -1,0 +1,25 @@
+<div id="mode1">
+    <label>Username Mode 1</label>
+    <input type="text"
+           class="form-control"
+           [(ngModel)] = "userName"
+           (input) = "isEmptyString($event)">
+    <p>{{ userName }}</p>
+    
+    <button
+        type="text"
+        class="btn btn-primary"
+        [disabled]="emptyString"
+        (click)="resetUserName()"
+        > Reset username </button>
+</div>
+
+<div id="mode2">
+    <label> Username Mode 2</label>
+    <input type="text" class="form-control" [(ngModel)]="userName2">
+    <p>{{ userName2 }}</p>
+    <button
+        class="btn btn-primary"
+        [disabled]="userName2 === ''"
+        (click)="userName2 = ''">Reset User</button>
+</div>
